@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="upgradeAccent">#468DFF</color>
+
+    <color name="upgrade_selected_selected">#30ffffff</color>
+    <color name="upgrade_selected_press">#30666666</color>
+    <color name="upgrade_selected_normal">#00000000</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <!-- 文字的颜色 -->
+    <color name="text_primary">#222222</color>
+    <color name="text_sub_primary">#333333</color>
+    <color name="text_secondary">#666666</color>
+    <color name="text_tertiary">#999999</color>
+    <color name="text_fourth">#B8B8B8</color>
+    <color name="text_fifth">#cccccc</color>
+    <color name="text_sixth">#eeeeee</color>
+</resources>

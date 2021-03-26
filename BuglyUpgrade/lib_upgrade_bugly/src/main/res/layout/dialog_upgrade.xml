@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_upgrade_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_upgrade_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:tag="beta_title"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="系统更新提示" />
+
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="43dp"
+            android:text="@string/upgrade_welcome"
+            android:textColor="@color/text_sub_primary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <TextView
+            android:id="@+id/welcome_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/upgrade_welcome_tips"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/welcome"
+            app:layout_constraintTop_toBottomOf="@id/welcome" />
+
+        <TextView
+            android:id="@+id/upgradeInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:lineSpacingExtra="5dp"
+            android:tag="beta_upgrade_info"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/welcome_tips"
+            tools:text="时间：2019年8月9日\n更新版本：Athena-V1.2.3" />
+
+        <TextView
+            android:id="@+id/upgradeFeature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="5dp"
+            android:tag="beta_upgrade_feature"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/upgradeInfo"
+            tools:text="更新内容：\n1）错题本中查看已掌握题目;\n2）简化添加和绑定家长流程；\n3）手动签到的布局调整；\n4）每日错题整理数据统计错误；" />
+
+        <TextView
+            android:id="@+id/slogan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/upgrade_slogan"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/upgradeFeature" />
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ripple_upgrade_cancel"
+            android:gravity="center"
+            android:tag="beta_cancel_button"
+            android:text="@string/upgrade_cancel"
+            android:textColor="@color/upgradeAccent"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/upgrade"
+            app:layout_constraintEnd_toStartOf="@id/upgrade"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/upgrade" />
+
+        <TextView
+            android:id="@+id/upgrade"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/ripple_upgrade_now"
+            android:gravity="center"
+            android:tag="beta_confirm_button"
+            android:text="@string/upgrade_now"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cancel"
+            app:layout_constraintTop_toBottomOf="@id/slogan" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

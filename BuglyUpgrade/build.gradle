@@ -1,0 +1,46 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript { 
+    ext {
+        def gitCommitCount = Integer.parseInt('git rev-list HEAD --count'.execute([], project.rootDir).text.trim())
+        def vCode = gitCommitCount
+        def vName = '1.0'
+        println("versionCode is " + vCode + " versionName is " + vName)
+
+        compileSdkVersion = 28
+        buildToolsVersion = '29.0.2'
+        minSdkVersion = 21
+        targetSdkVersion = 28
+        versionCode = vCode
+        versionName = vName
+        support_version = '28.0.0'
+        kotlin_version = '1.3.50'
+        anko_version = '0.10.8'
+        tinker_version = '1.9.14'
+    }
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+//        classpath "com.tencent.tinker:tinker-patch-gradle-plugin:$tinker_version"
+        classpath 'com.tencent.bugly:tinker-support:1.2.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+
+        flatDir { dirs '../aars' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

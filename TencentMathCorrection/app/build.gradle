@@ -1,0 +1,69 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.zybf.math.correct"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        def info = getAppInfo()
+        def appId = info[0]
+        def secretId = info[1]
+        def secretKey = info[2]
+        buildConfigField("String", "APP_ID", appId)
+        buildConfigField("String", "SECRET_ID", secretId)
+        buildConfigField("String", "SECRET_KEY", secretKey)
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs")
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.fragment:fragment-ktx:1.2.5'
+
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'com.tencent.taisdk:TAISDK:1.2.3.40'
+}
+
+def getAppInfo() {
+    Properties p = new Properties()
+    File file = rootProject.file('local.properties')
+    def is = new FileInputStream(file)
+    p.load(is)
+
+    def appId = p.getProperty('APP_ID')
+    def secretId = p.getProperty('SECRET_ID')
+    def secretKey = p.getProperty('SECRET_KEY')
+    is.close()
+    return [appId, secretId, secretKey]
+}

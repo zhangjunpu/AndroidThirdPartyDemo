@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MathCorrection</string>
+    <string name="homework">作业</string>
+    <string name="album">相册</string>
+    <string name="start">开始</string>
+    <string name="local_parse">本地解析</string>
+    <string name="local_image">本地图片(下一个))</string>
+</resources>
